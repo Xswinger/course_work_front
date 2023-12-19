@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1>Профиль</h1>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <h6 class="card-header">
+                    Карточка
+                </h6>
+                <div class="card-body">
+                    <h5 class="card-title">Аллаяров Игорь Олегович</h5>
+                    <img src="../../assets/profile-photo.jpg" style="width: 200px; height: 150px;" alt="Нет фото">
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Разряд: КМС</li>
+                    <li class="list-group-item">Возраст: 27 лет</li>
+                    <li class="list-group-item">Спортшкола: ССК</li>
+                    <li class="list-group-item">Тренер: Каменьщиков П.В.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="card">
+                <h6 class="card-header">
+                    Результаты
+                </h6>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li *ngFor="let results of data" class="list-group-item">
+                            <div class="card">
+                                <h6 class="card-header">
+                                    {{results.championship}}
+                                </h6>
+                                <div class="card-body">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Дистанция</th>
+                                                <th scope="col">Результат</th>
+                                                <th scope="col">Ранк</th>
+                                                <th scope="col">FINA</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let result of results.results">
+                                                <td>{{result.distance}}</td>
+                                                <td>{{result.result}}</td>
+                                                <td>{{result.rank}}</td>
+                                                <td>{{result.fina}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
