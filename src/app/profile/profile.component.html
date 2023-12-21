@@ -1,15 +1,15 @@
 <div class="container">
     <div class="row">
         <div class="col-12 text-center">
-            <h1>Профиль</h1>
+            <h1 style="margin-top: 10px">Профиль</h1>
         </div>
         <div class="col-4">
             <div class="card">
-                <h6 class="card-header">
+                <h3 class="card-header">
                     Карточка
-                </h6>
+                </h3>
                 <div class="card-body">
-                    <h5 class="card-title">Аллаяров Игорь Олегович</h5>
+                    <h2 class="card-title">Аллаяров Игорь Олегович</h2>
                     <img src="../../assets/profile-photo.jpg" style="width: 200px; height: 150px;" alt="Нет фото">
                 </div>
                 <ul class="list-group list-group-flush">
@@ -22,16 +22,16 @@
         </div>
         <div class="col-8">
             <div class="card">
-                <h6 class="card-header">
+                <h3 class="card-header">
                     Результаты
-                </h6>
+                </h3>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         <li *ngFor="let results of data" class="list-group-item">
                             <div class="card">
-                                <h6 class="card-header">
+                                <h3 class="card-header">
                                     {{results.championship}}
-                                </h6>
+                                </h3>
                                 <div class="card-body">
                                     <table class="table">
                                         <thead>

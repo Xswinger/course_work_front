@@ -8,6 +8,7 @@ import { SportsSchoolComponent } from './content/sports-school/sports-school.com
 import { SportsmanComponent } from './content/sportsman/sportsman.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CompetitionComponent } from './content/competition/competition.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     SportsSchoolComponent,
     SportsmanComponent,
-    ProfileComponent
+    ProfileComponent,
+    CompetitionComponent
   ],
   imports: [
     BrowserModule,
