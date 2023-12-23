@@ -22,29 +22,31 @@
                     Рейтинг последних соревнований
                 </div>
                 <div class="card-body">
-                    <div class="card">
+                    <div class="card" *ngFor="let competition of data">
                         <div class="card-header">
-                            <h3 class="card-title">Лига плавания 4-й этап</h3>
-                            <h4 class="card-subtitle mb-2 text-body-secondary">Санкт-Петербург | 27.12.2023</h4>
+                            <h3 class="card-title">{{competition.name}}</h3>
+                            <h4 class="card-subtitle mb-2 text-body-secondary">{{competition.location}} | {{competition.date}}</h4>
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title">50 брасс</h3>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Место</th>
-                                        <th scope="col">ФИО</th>
-                                        <th scope="col">Результат</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Аллаяров Игорь Олегович</td>
-                                        <td>31.50</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div *ngFor="let distance of competition.distances"> 
+                                <h3 class="card-title">{{distance.name}}</h3>
+                                <table class="table" *ngFor="let result of distance.results">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Место</th>
+                                            <th scope="col">ФИО</th>
+                                            <th scope="col">Результат</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{{result.place}}</td>
+                                            <td>{{result.name}}</td>
+                                            <td>{{result.result}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

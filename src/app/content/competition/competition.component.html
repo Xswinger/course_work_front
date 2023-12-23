@@ -22,14 +22,14 @@
                     Календарь
                 </div>
                 <div class="card-body">
-                    <div class="card">
+                    <div class="card" *ngFor="let competition of data">
                         <div class="card-header">
-                            Лига плавания 4-й этап
+                            {{competition.name}}
                         </div>
                         <ul class="list-group list-group-horizontal">
-                            <li class="list-group-item">27.12.2023</li>
-                            <li class="list-group-item">Санкт-Петербург</li>
-                            <li class="list-group-item">Центр Плавания</li>
+                            <li class="list-group-item">{{competition.date}}</li>
+                            <li class="list-group-item">{{competition.locationCity}}</li>
+                            <li class="list-group-item">{{competition.locationPool}}</li>
                         </ul>
                     </div>
                 </div>

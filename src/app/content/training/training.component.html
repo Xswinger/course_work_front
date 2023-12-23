@@ -1,1 +1,40 @@
-<p>training works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 style="margin-top: 10px">Тренировки</h1>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Введите ФИО спортсмена или тренера">
+                        <button class="btn btn-outline-success" type="submit">Поиск</button>
+                    </form>
+                </div>
+                <div class="card-body text-center">
+                    Нет результатов
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    Популярные тренировки
+                </div>
+                <div class="card-body">
+                    <div class="card" *ngFor="let training of data">
+                        <div class="card-header">
+                            Спорстмен - {{training.sportsman}}
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item" *ngFor="let task of training.tasks">{{task.description}}</li>
+                        </ul>
+                        <div class="card-footer">
+                            Тренер - {{training.coach}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
