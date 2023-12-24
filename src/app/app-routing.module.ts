@@ -8,8 +8,14 @@ import { RatingComponent } from './content/rating/rating.component';
 import { HomeComponent } from './content/home/home.component';
 import { CoachComponent } from './content/coach/coach.component';
 import { TrainingComponent } from './content/training/training.component';
+import { LoginComponent } from './authentication/login/login.component';
+import { SignupComponent } from './authentication/signup/signup.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
+  { path: "", component: LoginComponent},
+  { path: "login", component: LoginComponent},
+  { path: "signup", component: SignupComponent },
   { path: "sportsman", component: SportsmanComponent },
   { path: "sports_school", component: SportsSchoolComponent },
   { path: "profile", component: ProfileComponent },
@@ -17,7 +23,8 @@ const routes: Routes = [
   { path: "rating", component: RatingComponent },
   { path: "coach", component: CoachComponent },
   { path: "training", component: TrainingComponent },
-  { path: "**", component: HomeComponent } 
+  { path: "home", component: HomeComponent },
+  { path: "**", component: NotFoundComponent }
 ];
 
 @NgModule({

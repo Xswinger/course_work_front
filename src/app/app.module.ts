@@ -14,6 +14,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { HomeComponent } from './content/home/home.component';
 import { CoachComponent } from './content/coach/coach.component';
 import { TrainingComponent } from './content/training/training.component';
+import { LoginComponent } from './authentication/login/login.component';
+import { SignupComponent } from './authentication/signup/signup.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { TrainingComponent } from './content/training/training.component';
     RatingComponent,
     HomeComponent,
     CoachComponent,
-    TrainingComponent
+    TrainingComponent,
+    LoginComponent,
+    SignupComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
