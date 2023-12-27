@@ -14,17 +14,33 @@
                     <img src="../../assets/profile-photo.jpg" style="width: 200px; height: 150px;" alt="Нет фото">
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Разряд: КМС</li>
+                    <li class="list-group-item" *ngIf="isSportsman()">Статус: Спортсмен</li>
+                    <li class="list-group-item" *ngIf="!isSportsman()">Статус: Тренер</li>
+                    <li class="list-group-item" *ngIf="isSportsman()">Разряд: КМС</li>
                     <li class="list-group-item">Возраст: 27 лет</li>
                     <li class="list-group-item">Спортшкола: ССК</li>
-                    <li class="list-group-item">Тренер: Каменьщиков П.В.</li>
+                    <li class="list-group-item" *ngIf="isSportsman()">Тренер: Каменьщиков П.В.</li>
                 </ul>
+            </div>
+            <div *ngIf="!isSportsman()" class="card mt-3">
+                <h3 class="card-header">
+                    Спортсмены
+                </h3>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Аллаяров Игорь Олегович</li>
+                        <li class="list-group-item">Аллаяров Игорь Олегович</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="col-8">
             <div class="card">
-                <h3 class="card-header">
+                <h3 *ngIf="isSportsman()" class="card-header">
                     Результаты
+                </h3>
+                <h3 *ngIf="!isSportsman()" class="card-header">
+                    Результаты спортсменов
                 </h3>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
@@ -34,7 +50,7 @@
                                     {{results.championship}}
                                 </h3>
                                 <div class="card-body">
-                                    <table class="table">
+                                    <table *ngIf="isSportsman()" class="table">
                                         <thead>
                                             <tr>
                                                 <th scope="col">Дистанция</th>
@@ -49,6 +65,27 @@
                                                 <td>{{result.result}}</td>
                                                 <td>{{result.rank}}</td>
                                                 <td>{{result.fina}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <table *ngIf="!isSportsman()" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Спортсмен</th>
+                                                <th scope="col">Дистанция</th>
+                                                <th scope="col">Результат</th>
+                                                <th scope="col">Ранк</th>
+                                                <th scope="col">FINA</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Аллаяров Игорь Олегович</td>
+                                                <td>50 брасс</td>
+                                                <td>31.50</td>
+                                                <td>I</td>
+                                                <td>450</td>
                                             </tr>
                                         </tbody>
                                     </table>

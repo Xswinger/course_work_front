@@ -30,4 +30,13 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  isSportsman() {
+    console.log(localStorage.getItem('status'))
+    if (localStorage.getItem('status') === "sportsman") {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 }

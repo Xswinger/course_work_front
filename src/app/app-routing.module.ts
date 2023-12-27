@@ -11,6 +11,7 @@ import { TrainingComponent } from './content/training/training.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { UserTrainingComponent } from './content/user-training/user-training.component';
 
 const routes: Routes = [
   { path: "", component: LoginComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: "coach", component: CoachComponent },
   { path: "training", component: TrainingComponent },
   { path: "home", component: HomeComponent },
+  { path: "my_training", component: UserTrainingComponent },
   { path: "**", component: NotFoundComponent }
 ];
 

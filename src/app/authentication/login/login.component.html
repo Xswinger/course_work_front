@@ -6,24 +6,24 @@
                     <h2>Вход</h2>
                 </div>
                 <div class="card-body">
-                    <form (ngSubmit)="onEntry()">
+                    <form [formGroup]="User" (ngSubmit)="onEntry()">
                         <div>
                             <label class="form-label">Логин</label>
-                            <input class="form-control" type="text">
+                            <input class="form-control" type="text" formControlName="login">
                         </div>
                         <div>
                             <label class="form-label">Пароль</label>
-                            <input class="form-control" type="password">
+                            <input class="form-control" type="password" formControlName="password">
                         </div>
                         <div>
                             <label class="form-label">Роль</label>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" formControlName="status">
                                 <option value="1" selected>Спортсмен</option>
                                 <option value="2">Тренер</option>
                             </select>
                         </div>
                         <div class="text-center mt-3">
-                        <button type="submit" class="btn btn-primary" routerLink="/home">Войти</button>
+                            <button type="submit" class="btn btn-primary">Войти</button>
                         </div>
                     </form>
                     <div class="text-center">

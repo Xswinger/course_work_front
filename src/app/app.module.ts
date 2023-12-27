@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +19,7 @@ import { TrainingComponent } from './content/training/training.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { UserTrainingComponent } from './content/user-training/user-training.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +35,17 @@ import { NotFoundComponent } from './not-found/not-found.component';
     TrainingComponent,
     LoginComponent,
     SignupComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    UserTrainingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
