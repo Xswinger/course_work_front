@@ -10,19 +10,16 @@
                     Карточка
                 </h3>
                 <div class="card-body">
-                    <h2 class="card-title">Аллаяров Игорь Олегович</h2>
+                    <h2 class="card-title">{{profileInfo.fullName}}</h2>
                     <img src="../../assets/profile-photo.jpg" style="width: 200px; height: 150px;" class="rounded float-start" alt="Нет фото">
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" *ngIf="isSportsman()">Статус: Спортсмен</li>
-                    <li class="list-group-item" *ngIf="!isSportsman()">Статус: Тренер</li>
-                    <li class="list-group-item" *ngIf="isSportsman()">Разряд: КМС</li>
-                    <li class="list-group-item">Возраст: 27 лет</li>
+                    <li class="list-group-item">Статус: Тренер</li>
+                    <li class="list-group-item">Дата рождения: {{profileInfo.yob}}</li>
                     <li class="list-group-item">Спортшкола: ССК</li>
-                    <li class="list-group-item" *ngIf="isSportsman()">Тренер: Каменьщиков П.В.</li>
                 </ul>
             </div>
-            <div *ngIf="!isSportsman()" class="card mt-3">
+            <div class="card mt-3">
                 <h3 class="card-header mb-0">
                     Спортсмены
                 </h3>
@@ -36,10 +33,7 @@
         </div>
         <div class="col-8">
             <div class="card mb-3">
-                <h3 *ngIf="isSportsman()" class="card-header">
-                    Результаты
-                </h3>
-                <h3 *ngIf="!isSportsman()" class="card-header">
+                <h3 class="card-header">
                     Результаты спортсменов
                 </h3>
                 <div class="card-body">
@@ -50,26 +44,7 @@
                                     {{results.championship}}
                                 </h3>
                                 <div class="card-body">
-                                    <table *ngIf="isSportsman()" class="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Дистанция</th>
-                                                <th scope="col">Результат</th>
-                                                <th scope="col">Ранк</th>
-                                                <th scope="col">FINA</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr *ngFor="let result of results.results">
-                                                <td>{{result.distance}}</td>
-                                                <td>{{result.result}}</td>
-                                                <td>{{result.rank}}</td>
-                                                <td>{{result.fina}}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                    <table *ngIf="!isSportsman()" class="table">
+                                    <table class="table">
                                         <thead>
                                             <tr>
                                                 <th scope="col">Спортсмен</th>
@@ -98,3 +73,4 @@
         </div>
     </div>
 </div>
+

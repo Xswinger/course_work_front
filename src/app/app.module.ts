@@ -20,6 +20,8 @@ import { LoginComponent } from './authentication/login/login.component';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserTrainingComponent } from './content/user-training/user-training.component';
+import { SportsmanProfileComponent } from './content/sportsman/sportsman-profile/sportsman-profile.component';
+import { CoachProfileComponent } from './content/coach/coach-profile/coach-profile.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { UserTrainingComponent } from './content/user-training/user-training.com
     LoginComponent,
     SignupComponent,
     NotFoundComponent,
-    UserTrainingComponent
+    UserTrainingComponent,
+    SportsmanProfileComponent,
+    CoachProfileComponent
   ],
   imports: [
     BrowserModule,

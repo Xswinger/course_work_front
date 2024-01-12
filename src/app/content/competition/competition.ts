@@ -1,6 +1,8 @@
 export interface Competition {
+    id: number,
     name: string,
-    locationCity: string,
-    locationPool: string,
-    date: Date
+    poolName: string,
+    startDate: string,
+    endDate: string,
+    distance: string
 }

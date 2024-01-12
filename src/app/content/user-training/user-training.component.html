@@ -4,30 +4,38 @@
         <div class="col-12 text-center">
             <h1 style="margin-top: 10px">Мои тренировки</h1>
         </div>
-        <div class="col-8">
+        <div class="col-7">
             <div class="card">
                 <div class="card-header">
                     Тренировки
                 </div>
                 <div class="card-body">
-                    Нет результатов
+                    <div class="card mt-3" *ngFor="let training of trainings">
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item" *ngFor="let task of training.exercises">{{task.count}} {{task.description}}</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-5">
             <div class="card">
                 <div class="card-header">
                     Добавить тренировку
                 </div>
                 <div class="card-body">
                     <form>
-                        <div class="input-group">
-                            <span class="input-group-text">Задание</span>
-                            <textarea class="form-control"></textarea>
+                        <div *ngFor="let task of tasks, let i = index" class="input-group mt-3">
+                            <span class="input-group-text">Задание №{{i+1}}</span>
+                            <input type="number" class="form-control" [(ngModel)]="task.count" name="task{{i}}Count" placeholder="Число повторов">
+                            <textarea class="form-control" [(ngModel)]="task.description" name="task{{i}}Desc"></textarea>
                         </div>
                         <div class="text-center mt-3">
-                            <button type="submit" class="btn btn-primary">Создать</button>
-                            <button type="submit" class="btn btn-primary">Добавить задание</button>
+                            <button type="submit" class="btn btn-primary" (click)="addTraining()">Создать</button>
+                            <button type="submit" class="btn btn-primary" (click)="addTask()">+</button>
+                            <button type="submit" class="btn btn-primary" (click)="removeTask()" [disabled]="tasks.length == 1">-</button>
                         </div>
                     </form>
                 </div>

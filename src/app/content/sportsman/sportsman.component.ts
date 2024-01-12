@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ApiContentService } from 'src/app/api/api.content.service';
-import { FoundedUser } from './sportsman';
+import { UserFilter } from './sportsman';
 
 @Component({
   selector: 'app-sportsman',
@@ -10,13 +10,13 @@ import { FoundedUser } from './sportsman';
 })
 export class SportsmanComponent implements OnInit {
 
-  data: FoundedUser[] = [];
+  data: UserFilter[] = [];
 
   Sportsman!: FormGroup
 
   constructor(private formBuilder: FormBuilder, private sportsmanService: ApiContentService) { 
     this.Sportsman = this.formBuilder.group({
-      name: ''
+      fullName: ''
     })
   }
 
@@ -24,8 +24,8 @@ export class SportsmanComponent implements OnInit {
   }
 
   getSportsman() {
-    this.sportsmanService.getSportsman(this.Sportsman.value).subscribe(
-      (data: FoundedUser[]) => {
+    this.sportsmanService.getSportsmanByName(this.Sportsman.value).subscribe(
+      (data: UserFilter[]) => {
         console.log(data)
         this.data = data;
       }

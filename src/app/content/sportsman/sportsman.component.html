@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-header">
                 <form class="d-flex" role="search" [formGroup]="Sportsman" (ngSubmit)="getSportsman()">
-                    <input class="form-control me-2" type="search" placeholder="Введите ФИО" formControlName="name">
+                    <input class="form-control me-2" type="search" placeholder="Введите ФИО" formControlName="fullName">
                     <button class="btn btn-outline-success" type="submit">Поиск</button>
                 </form>
             </div>
@@ -15,7 +15,11 @@
                 <div *ngIf="data.length == 0">Нет результатов</div>
                 <div *ngIf="data.length != 0">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item" *ngFor="let sportsman of data">{{sportsman.name}}</li>
+                        <li class="list-group-item" *ngFor="let sportsman of data">
+                            <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" routerLink="/sportsman/{{sportsman.id}}">
+                                {{sportsman.fullName}}
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

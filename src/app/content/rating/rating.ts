@@ -1,7 +1,7 @@
 export interface CompetitionResults {
     name: string,
     location: string,
-    date: Date,
+    date: string,
     distances: Distance[]
 }
 

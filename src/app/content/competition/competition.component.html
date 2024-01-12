@@ -8,12 +8,27 @@
             <div class="card">
                 <div class="card-header">
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Введите название">
-                        <button class="btn btn-outline-success" type="submit">Поиск</button>
+                        <input class="form-control me-2" placeholder="Введите название" [(ngModel)]="nameFilter" name="search" (ngModelChange)="filterData()">
                     </form>
                 </div>
                 <div class="card-body text-center">
-                    Нет результатов
+                    <div class="accordion">
+                        <div *ngFor="let competition of filteredData, let i = index" class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#acc'+i" aria-expanded="true">
+                                    {{competition.name}}
+                                </button>
+                            </h2>
+                            <div id="acc{{i}}" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li>Даты: {{competition.startDate}} - {{competition.endDate}}</li>
+                                        <li>Бассейн: {{competition.poolName}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -23,14 +38,13 @@
                     Календарь
                 </div>
                 <div class="card-body">
-                    <div class="card" *ngFor="let competition of data">
+                    <div class="card mt-3" *ngFor="let competition of calendarData">
                         <div class="card-header">
                             {{competition.name}}
                         </div>
                         <ul class="list-group list-group-horizontal">
-                            <li class="list-group-item">{{competition.date}}</li>
-                            <li class="list-group-item">{{competition.locationCity}}</li>
-                            <li class="list-group-item">{{competition.locationPool}}</li>
+                            <li class="list-group-item">{{competition.startDate}} - {{competition.endDate}}</li>
+                            <li class="list-group-item">{{competition.poolName}}</li>
                         </ul>
                     </div>
                 </div>

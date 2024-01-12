@@ -1,0 +1,65 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 style="margin-top: 10px">Профиль</h1>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <h3 class="card-header mb-0">
+                    Карточка
+                </h3>
+                <div class="card-body">
+                    <h2 class="card-title">{{profileInfo.fullName}}</h2>
+                    <img src="../../assets/profile-photo.jpg" style="width: 200px; height: 150px;" class="rounded float-start" alt="Нет фото">
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Статус: Спортсмен</li>
+                    <li class="list-group-item">Разряд: {{profileInfo.rank}}</li>
+                    <li class="list-group-item">Дата рождения: {{profileInfo.yob}}</li>
+                    <li class="list-group-item">Спортшкола: ССК</li>
+                    <li class="list-group-item">Тренер: Каменьщиков Павел Валерьевич</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="card mb-3">
+                <h3 class="card-header">
+                    Результаты
+                </h3>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li *ngFor="let results of data" class="list-group-item">
+                            <div class="card">
+                                <h3 class="card-header">
+                                    {{results.championship}}
+                                </h3>
+                                <div class="card-body">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Дистанция</th>
+                                                <th scope="col">Результат</th>
+                                                <th scope="col">Ранк</th>
+                                                <th scope="col">FINA</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let result of results.results">
+                                                <td>{{result.distance}}</td>
+                                                <td>{{result.result}}</td>
+                                                <td>{{result.rank}}</td>
+                                                <td>{{result.fina}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

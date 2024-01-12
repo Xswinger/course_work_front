@@ -1,4 +1,4 @@
-export interface UserFilter {
+export interface CoachFilter {
     id: number
     fullName: string
 }

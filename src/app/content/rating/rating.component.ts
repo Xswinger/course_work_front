@@ -12,7 +12,7 @@ export class RatingComponent implements OnInit {
     {
       name: "Лига плавания 4-й этап",
       location: "Санкт-Петербург",
-      date: new Date("10-10-2023"),
+      date: "10-10-2023",
       distances: [{
         name: "50 брасс",
         results: [{
